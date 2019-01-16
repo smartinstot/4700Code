@@ -2,7 +2,7 @@ function AddListAtomic(X0, Y0, VX0, VY0, Types, InitDist, Temp)
 global C
 global x y AtomSpacing
 global nAtoms
-global AtomType Vx Vy Mass0 Mass1
+global AtomType Vx Vy Mass0 Mass1 Mass2
 
 xp = X0;
 yp = Y0;
@@ -11,9 +11,11 @@ numAtoms = length(X0);
 x(nAtoms + 1:nAtoms+numAtoms) = xp + (rand(1, numAtoms) - 0.5) * AtomSpacing * InitDist;
 y(nAtoms + 1:nAtoms+numAtoms) = yp + (rand(1, numAtoms) - 0.5) * AtomSpacing * InitDist;
 
-iTypes = Types == 1;
+iTypes1 = Types == 1;
+iTypes2 = Types == 2;
 Mass = ones(1,numAtoms)*Mass0;
-Mass(iTypes) = Mass1;
+Mass(iTypes1) = Mass1;
+Mass(iTypes2) = Mass2;
 
 AtomType(nAtoms + 1:nAtoms + numAtoms) = Types;
 

@@ -2,12 +2,14 @@ function AddHCPAtomicBlob(LAtoms, X0, Y0, VX0, VY0, RotAng, InitDist, Temp, Type
 global C
 global x y AtomSpacing
 global nAtoms % MinX MaxX MinY MaxY
-global AtomType Vx Vy Mass0 Mass1
+global AtomType Vx Vy Mass0 Mass1 Mass2
 
 if Type == 0
     Mass = Mass0;
-else
+elseif Type == 1
     Mass = Mass1;
+else
+    Mass = Mass2;
 end
 
 % L = ((LAtoms-1)+0.5)*AtomSpacing;

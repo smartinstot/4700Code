@@ -6,6 +6,7 @@ Method = 'VE'; % VE -- verlot; FD -- Forward Difference
 
 Mass0 = 14 * C.am; % Silicon
 Mass1 = 5 * C.am; % Argon
+Mass2 = 32 * C.am; % Germanium
 
 AtomSpacing = 0.5430710e-9;
 LJSigma = AtomSpacing / 2^(1 / 6);
